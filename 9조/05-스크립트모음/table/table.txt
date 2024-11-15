@@ -1,0 +1,99 @@
+-- Orders 테이블 삭제
+DROP TABLE Orders purge;
+
+-- Items 테이블 삭제
+DROP TABLE Items purge;
+
+-- Members 테이블 삭제
+DROP TABLE Members purge;
+
+-- Members 테이블 생성
+CREATE TABLE Members (
+  member_id VARCHAR2(20) PRIMARY KEY,
+  pw VARCHAR2(20),
+  name VARCHAR2(20)
+);
+
+-- Members 테이블에 더미데이터 삽입
+INSERT INTO Members (member_id, pw, name)
+VALUES ('member1', 'test', '홍길동');
+
+INSERT INTO Members (member_id, pw, name)
+VALUES ('member2', 'test', 'John Doe');
+
+INSERT INTO Members (member_id, pw, name)
+VALUES ('member3', 'test', '김철수');
+
+
+-- Items 테이블 생성
+CREATE TABLE Items (
+  item_id NUMBER PRIMARY KEY,
+  name VARCHAR2(20),
+  price INT,
+  stock INT,
+  description VARCHAR2(250)
+);
+
+--기존 item_id_seq 시퀀스 삭제
+DROP SEQUENCE item_id_seq;
+
+--item_id_seq 시퀀스 생성
+CREATE SEQUENCE item_id_seq
+START WITH 0
+INCREMENT BY 1
+MINVALUE 0
+MAXVALUE 100
+CYCLE
+NOCACHE;
+
+-- Items 테이블에 더미 데이터 삽입
+INSERT INTO Items (item_id, name, price, stock, description)
+VALUES (item_id_seq.NEXTVAL, '상품1', 10000, 10, '상품1에 대한 설명입니다.');
+
+INSERT INTO Items (item_id, name, price, stock, description)
+VALUES (item_id_seq.NEXTVAL, '상품2', 20000, 5, '상품2에 대한 설명입니다.');
+
+INSERT INTO Items (item_id, name, price, stock, description)
+VALUES (item_id_seq.NEXTVAL, '상품3', 15000, 3, '상품3에 대한 설명입니다.');
+
+INSERT INTO Items (item_id, name, price, stock, description)
+VALUES (item_id_seq.NEXTVAL, '상품4', 30000, 8, '상품4에 대한 설명입니다.');
+
+INSERT INTO Items (item_id, name, price, stock, description)
+VALUES (item_id_seq.NEXTVAL, '상품5', 25000, 12, '상품5에 대한 설명입니다.');
+
+
+-- Orders 테이블 생성
+CREATE TABLE Orders (
+  order_id INT PRIMARY KEY,
+  item_id INT,
+  member_id VARCHAR2(20),
+  quantity INT NOT NULL,
+  status VARCHAR2(20) NOT NULL,
+  FOREIGN KEY (item_id) REFERENCES Items(item_id),
+  FOREIGN KEY (member_id) REFERENCES Members(member_id)
+);
+
+--기존 order_id_seq 시퀀스 삭제
+DROP SEQUENCE order_id_seq;
+
+-- order_id_seq 시퀀스 생성
+CREATE SEQUENCE order_id_seq
+START WITH 0
+INCREMENT BY 1
+MINVALUE 0
+MAXVALUE 100
+NOCYCLE
+NOCACHE;
+
+-- Orders 테이블에 더미 데이터 삽입
+INSERT INTO Orders (order_id, item_id, member_id, quantity, status)
+VALUES (order_id_seq.NEXTVAL, 2, 'member2', 3, '취소');
+
+INSERT INTO Orders (order_id, item_id, member_id, quantity, status)
+VALUES (order_id_seq.NEXTVAL, 1, 'member1', 5, '확정');
+
+INSERT INTO Orders (order_id, item_id, member_id, quantity, status)
+VALUES (order_id_seq.NEXTVAL, 2, 'member3', 3, '대기');
+
+COMMIT;

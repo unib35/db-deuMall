@@ -1,0 +1,21 @@
+﻿  AddMenu.cpp
+  Dao.cpp
+  LoginMenu.cpp
+  main.cpp
+  MainMenu.cpp
+  ManagerMenu.cpp
+  OrderManage.cpp
+  OrderMenu.cpp
+  ProductChange.cpp
+  ProductDelete.cpp
+  ProductDetails.cpp
+  ProductSearch.cpp
+  SaleMenu.cpp
+  screenControl.cpp
+  ShoppingMenu.cpp
+  SingupMenu.cpp
+  TrackingOrder.cpp
+  UserfileMenu.cpp
+  코드를 생성하고 있습니다...
+  execute_query.c
+C:\Users\재진\Desktop\20193183\회의록 모음\9조\04-VC디렉토리\deuMall\execute_query.c(176,10): fatal  error C1083: 포함 파일을 열 수 없습니다. 'sqlda.h': No such file or directory
