@@ -1,0 +1,2 @@
+﻿  proctest.c
+C:\Users\Lee\Desktop\db-test-project\proctest.c(155,10): fatal error C1083: 포함 파일을 열 수 없습니다. 'sqlda.h': No such file or directory

@@ -1,0 +1,56 @@
+drop table sale purge ;
+drop table inventory purge ;
+
+create table inventory
+( no       number(5),
+  all_amount   number(10) default 0,
+  constraint inventory_no_pk  primary key(no)
+);
+
+create table sale
+( no       number(5),
+  amount   number(10),
+  sale_date  date
+);
+
+--------
+--트리거
+
+create or replace trigger sale_triger
+before insert on sale for each row
+declare
+ v_no number(5) ; 
+ v_all_amount number(10);
+begin
+  select no into v_no
+  from inventory
+  where no = :new.no;
+  
+
+  select all_amount into v_all_amount 
+  from inventory 
+  where no = :new.no;
+  
+  if ( v_all_amount + :new.amount  ) < 0 then
+       raise_application_error(-20003,'재고수량이 부족합니다.') ;
+  end if ;     
+  
+  update inventory
+  set all_amount = all_amount + :new.amount 
+  where no = :new.no ;
+  
+exception
+     when NO_DATA_FOUND  then
+         dbms_output.put_line('NEW PRODUCT !');
+         insert into inventory values(:new.no, :new.amount) ;  
+end ;
+
+---------
+insert into sale values(100, 10, sysdate);
+
+insert into sale values(100, 20, sysdate);
+
+insert into sale values(100, -5, sysdate);
+insert into sale values(100, -30, sysdate);
+
+----------

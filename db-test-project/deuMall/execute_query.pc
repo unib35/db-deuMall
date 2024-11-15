@@ -1,0 +1,134 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+#include <conio.h>
+#include <stdbool.h>
+#include "struct.h"
+/* for oracle */
+#include <sqlda.h>
+#include <sqlca.h>
+#include <sqlcpr.h>
+
+
+#define getch() _getch()
+
+void DB_connect();
+struct MembersDto select_MemberId(char id[]);
+void execute_update(char query[]);
+void copy_struct(struct MembersDto *result, struct MembersDto target);
+void sql_error();
+
+EXEC SQL BEGIN DECLARE SECTION;
+	VARCHAR uid[80];
+	VARCHAR pwd[20];
+EXEC SQL END DECLARE SECTION;
+
+
+
+
+void DB_connect()
+{
+   /* 아이디와 패스워드 수정해서 넣으세요*/
+    strcpy((char *)uid.arr,"a20193174@//sedb.deu.ac.kr:1521/orcl");
+    uid.len = (short) strlen((char *)uid.arr);
+    strcpy((char *)pwd.arr,"20193174");
+    pwd.len = (short) strlen((char *)pwd.arr);
+
+    EXEC SQL CONNECT :uid IDENTIFIED BY :pwd;
+	// connection이 실패했을경우의 처리부분
+
+    if (sqlca.sqlcode != 0 && sqlca.sqlcode != -1405){ 
+		printf("\7Cconnect error: %s", sqlca.sqlerrm.sqlerrmc);
+		getch();
+		exit(-1);
+    }
+
+    //printf("Oracle Connect SUCCESS by %s\n", uid.arr); //쿼리문 주석
+}
+
+void execute_update(char query[]){ //insert, delete, update
+    DB_connect();
+    EXEC SQL BEGIN DECLARE SECTION;
+        char dynstmt[1000];
+    EXEC SQL END DECLARE SECTION;
+
+    EXEC SQL WHENEVER SQLERROR DO sql_error("\7ORACLE ERROR:\n");
+	
+    sprintf(dynstmt, query);
+
+    EXEC SQL EXECUTE IMMEDIATE :dynstmt ;
+
+    EXEC SQL COMMIT WORK ;
+    
+	EXEC SQL COMMIT WORK RELEASE ;
+	getch();
+}
+
+struct MembersDto select_MemberId(char id[]){ //select
+
+    DB_connect();
+    EXEC SQL BEGIN DECLARE SECTION;
+    varchar member_id[100];
+    varchar pw[100];
+    varchar name[100];
+
+    char dynstmt[1000];
+    EXEC SQL END DECLARE SECTION;
+
+    EXEC SQL WHENEVER SQLERROR DO sql_error("\7ORACLE ERROR:\n");
+
+    sprintf(dynstmt, "SELECT member_id, pw, name FROM members where member_id = '%s'", id);
+
+    EXEC SQL PREPARE S FROM :dynstmt ;
+    EXEC SQL DECLARE c_cursor CURSOR FOR S ; 
+    EXEC SQL OPEN c_cursor ;  
+    //EXEC SQL WHENEVER NOT FOUND DO found();
+
+    EXEC SQL FETCH c_cursor INTO :member_id, :pw, :name;
+
+    if(sqlca.sqlcode != 0){
+        struct MembersDto result = {NULL, NULL, NULL};
+        return result;
+    }
+    
+
+    member_id.arr[member_id.len] = '\0';
+    pw.arr[pw.len] = '\0';
+    name.arr[name.len] = '\0';
+
+    struct MembersDto result =  {member_id.arr, pw.arr, name.arr};
+
+
+    return result;
+
+    EXEC SQL COMMIT WORK RELEASE ;
+}
+
+
+void sql_error(char *msg)
+{
+    char err_msg[128];
+    size_t buf_len, msg_len;
+
+    EXEC SQL WHENEVER SQLERROR CONTINUE;
+
+    printf("\n%s\n", msg);
+    buf_len = sizeof (err_msg);
+    sqlglm(err_msg, &buf_len, &msg_len);
+    printf("%.*s\n", msg_len, err_msg);
+
+    getch();
+    EXEC SQL ROLLBACK WORK ;
+
+}
+
+//구조체 값 복사 
+//target 값 -> result
+void copy_struct(struct MembersDto* result, struct MembersDto target) {
+    strcpy(result->member_id, target.member_id);
+    strcpy(result->pw, target.pw);
+    strcpy(result->name, target.name);
+}

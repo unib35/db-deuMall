@@ -1,0 +1,47 @@
+﻿  accountMgmt.c
+C:\Users\tdkgu\Desktop\[13조] 데이터베이스 응용 최종 결과 자료\4. VC 디렉토리\LogisticsManagement\accountMgmt.c(196,12): warning C4013: 'DB_connect'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\tdkgu\Desktop\[13조] 데이터베이스 응용 최종 결과 자료\4. VC 디렉토리\LogisticsManagement\accountMgmt.c(227,15): warning C4013: 'print_screen'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\tdkgu\Desktop\[13조] 데이터베이스 응용 최종 결과 자료\4. VC 디렉토리\LogisticsManagement\accountMgmt.c(261,7): warning C4013: 'gets'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+  addBranchAccount.c
+C:\Users\tdkgu\Desktop\[13조] 데이터베이스 응용 최종 결과 자료\4. VC 디렉토리\LogisticsManagement\addBranchAccount.c(208,12): warning C4013: 'DB_connect'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\tdkgu\Desktop\[13조] 데이터베이스 응용 최종 결과 자료\4. VC 디렉토리\LogisticsManagement\addBranchAccount.c(240,14): warning C4013: 'print_screen'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\tdkgu\Desktop\[13조] 데이터베이스 응용 최종 결과 자료\4. VC 디렉토리\LogisticsManagement\addBranchAccount.c(244,6): warning C4013: 'gets'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+  addStorage.c
+C:\Users\tdkgu\Desktop\[13조] 데이터베이스 응용 최종 결과 자료\4. VC 디렉토리\LogisticsManagement\addStorage.c(220,12): warning C4013: 'DB_connect'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\tdkgu\Desktop\[13조] 데이터베이스 응용 최종 결과 자료\4. VC 디렉토리\LogisticsManagement\addStorage.c(254,14): warning C4013: 'print_screen'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\tdkgu\Desktop\[13조] 데이터베이스 응용 최종 결과 자료\4. VC 디렉토리\LogisticsManagement\addStorage.c(463,6): warning C4013: 'gets'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\tdkgu\Desktop\[13조] 데이터베이스 응용 최종 결과 자료\4. VC 디렉토리\LogisticsManagement\addStorage.c(782,7): warning C4101: 'price' :참조되지 않은 지역 변수입니다.
+C:\Users\tdkgu\Desktop\[13조] 데이터베이스 응용 최종 결과 자료\4. VC 디렉토리\LogisticsManagement\addStorage.c(781,7): warning C4101: 'name' :참조되지 않은 지역 변수입니다.
+  Branchrequest.c
+C:\Users\tdkgu\Desktop\[13조] 데이터베이스 응용 최종 결과 자료\4. VC 디렉토리\LogisticsManagement\Branchrequest.c(283,13): warning C4013: 'gets'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\tdkgu\Desktop\[13조] 데이터베이스 응용 최종 결과 자료\4. VC 디렉토리\LogisticsManagement\Branchrequest.c(260,10): warning C4101: 'ordernumber' :참조되지 않은 지역 변수입니다.
+  deleteBranchAccount.c
+C:\Users\tdkgu\Desktop\[13조] 데이터베이스 응용 최종 결과 자료\4. VC 디렉토리\LogisticsManagement\deleteBranchAccount.c(206,12): warning C4013: 'DB_connect'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\tdkgu\Desktop\[13조] 데이터베이스 응용 최종 결과 자료\4. VC 디렉토리\LogisticsManagement\deleteBranchAccount.c(236,14): warning C4013: 'print_screen'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\tdkgu\Desktop\[13조] 데이터베이스 응용 최종 결과 자료\4. VC 디렉토리\LogisticsManagement\deleteBranchAccount.c(296,34): warning C4013: 'sql_error'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\tdkgu\Desktop\[13조] 데이터베이스 응용 최종 결과 자료\4. VC 디렉토리\LogisticsManagement\deleteBranchAccount.c(432,6): warning C4013: 'gets'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+  mainMenu.c
+  manageIn.c
+C:\Users\tdkgu\Desktop\[13조] 데이터베이스 응용 최종 결과 자료\4. VC 디렉토리\LogisticsManagement\manageIn.c(232,12): warning C4013: 'DB_connect'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\tdkgu\Desktop\[13조] 데이터베이스 응용 최종 결과 자료\4. VC 디렉토리\LogisticsManagement\manageIn.c(261,14): warning C4013: 'print_screen'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\tdkgu\Desktop\[13조] 데이터베이스 응용 최종 결과 자료\4. VC 디렉토리\LogisticsManagement\manageIn.c(491,6): warning C4013: 'gets'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+  manageOut.c
+C:\Users\tdkgu\Desktop\[13조] 데이터베이스 응용 최종 결과 자료\4. VC 디렉토리\LogisticsManagement\manageOut.c(231,12): warning C4013: 'DB_connect'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\tdkgu\Desktop\[13조] 데이터베이스 응용 최종 결과 자료\4. VC 디렉토리\LogisticsManagement\manageOut.c(260,14): warning C4013: 'print_screen'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\tdkgu\Desktop\[13조] 데이터베이스 응용 최종 결과 자료\4. VC 디렉토리\LogisticsManagement\manageOut.c(490,6): warning C4013: 'gets'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+  searchStorageStock.c
+C:\Users\tdkgu\Desktop\[13조] 데이터베이스 응용 최종 결과 자료\4. VC 디렉토리\LogisticsManagement\searchStorageStock.c(194,12): warning C4013: 'DB_connect'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\tdkgu\Desktop\[13조] 데이터베이스 응용 최종 결과 자료\4. VC 디렉토리\LogisticsManagement\searchStorageStock.c(223,14): warning C4013: 'print_screen'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\tdkgu\Desktop\[13조] 데이터베이스 응용 최종 결과 자료\4. VC 디렉토리\LogisticsManagement\searchStorageStock.c(286,34): warning C4013: 'sql_error'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+  select_BranchAccount.c
+C:\Users\tdkgu\Desktop\[13조] 데이터베이스 응용 최종 결과 자료\4. VC 디렉토리\LogisticsManagement\select_BranchAccount.c(213,12): warning C4013: 'DB_connect'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\tdkgu\Desktop\[13조] 데이터베이스 응용 최종 결과 자료\4. VC 디렉토리\LogisticsManagement\select_BranchAccount.c(239,14): warning C4013: 'print_screen'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\tdkgu\Desktop\[13조] 데이터베이스 응용 최종 결과 자료\4. VC 디렉토리\LogisticsManagement\select_BranchAccount.c(371,11): warning C4101: 'currentid' :참조되지 않은 지역 변수입니다.
+C:\Users\tdkgu\Desktop\[13조] 데이터베이스 응용 최종 결과 자료\4. VC 디렉토리\LogisticsManagement\select_BranchAccount.c(458,11): warning C4101: 'currentpass' :참조되지 않은 지역 변수입니다.
+C:\Users\tdkgu\Desktop\[13조] 데이터베이스 응용 최종 결과 자료\4. VC 디렉토리\LogisticsManagement\select_BranchAccount.c(576,7): warning C4013: 'gets'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+  select_Searchpro.c
+C:\Users\tdkgu\Desktop\[13조] 데이터베이스 응용 최종 결과 자료\4. VC 디렉토리\LogisticsManagement\select_Searchpro.c(197,12): warning C4013: 'DB_connect'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\tdkgu\Desktop\[13조] 데이터베이스 응용 최종 결과 자료\4. VC 디렉토리\LogisticsManagement\select_Searchpro.c(223,14): warning C4013: 'print_screen'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\tdkgu\Desktop\[13조] 데이터베이스 응용 최종 결과 자료\4. VC 디렉토리\LogisticsManagement\select_Searchpro.c(543,7): warning C4013: 'gets'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+  코드를 생성하고 있습니다...
+  LogisticsManagement.vcxproj -> C:\Users\tdkgu\Desktop\[13조] 데이터베이스 응용 최종 결과 자료\4. VC 디렉토리\LogisticsManagement\Debug\LogisticsManagement.exe

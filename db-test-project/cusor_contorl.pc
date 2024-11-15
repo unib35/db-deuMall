@@ -1,0 +1,68 @@
+// 작성자 : 이종민
+// login.pc 
+#define _CRT_SECURE_NO_WARNINGS
+//-----------------------------------------
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+#include <conio.h>
+
+/* for oracle */
+#include <sqlda.h>
+#include <sqlca.h>
+#include <sqlcpr.h>
+
+
+// win32 Visual C 2010 이상컴파일시 추가
+#define getch() _getch()
+//-----------------------------------------
+
+/*---------------  화면 커서 위치 제어 ----------------------*/
+#include < windows.h >
+void gotoxy(int x, int y) ;
+void getxy(int *x, int *y) ;
+void clrscr(void) ;
+/*-----------------------------------------------------------*/
+
+
+#define getch() _getch()
+#define LOGIN_SUCCESS 1
+#define DOWN_KEY 80
+#define UP_KEY 72
+
+int cursorControl(int arr[], int length, int current, int command){
+	switch(command){
+		case DOWN_KEY: //아래 방향키 입력 시
+			if(current < length - 1){
+				current++;
+				return current;
+			}
+			break;
+		case UP_KEY: //윗 방향키 입력 시
+			if(current > 0){
+				current--;	
+				return current;		
+			}
+			break;
+		default:
+			return 99; //잘못된 입력일 경우 99 반환.
+	}
+}
+
+int isNext(int arr[], int size, int current) {
+    for (int i = 0; i < size - 1; i++) {
+        if (arr[i] == current) {
+            if (arr[i + 1] != current) {
+                return 1;  // 다음 값이 현재 값과 다른 경우, 다음 값이 있음을 표시
+            } else {
+                return 0;  // 다음 값이 현재 값과 같은 경우, 다음 값이 없음을 표시
+            }
+        }
+    }
+    
+    return 0;  // 현재 값이 배열의 마지막 요소인 경우, 다음 값이 없음을 표시
+}
+
+

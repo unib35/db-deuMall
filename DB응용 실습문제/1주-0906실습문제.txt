@@ -1,0 +1,56 @@
+* 다음의 department, stud  테이블을 생성하시오.
+----------------------------------------
+create table department 
+(
+	dept_id 	varchar2(10) 	not null,
+	dept_name 	varchar2(20) 	not null,
+	office 		varchar2(20),
+	constraint pk_department primary key(dept_id)
+);
+
+create table stud 
+(
+	stu_id 		varchar2(10) 	not null,
+	resident_id 	varchar2(14) 	not null,
+	name 		varchar2(10) 	not null,
+	year 		int,
+	address 	varchar2(10),
+	dept_id 	varchar2(10),
+	constraint pk_stud primary key(stu_id),
+	constraint fk_stud foreign key(dept_id) references 
+		department(dept_id)
+);
+
+insert into department values('920', '컴퓨터공학과', '201호') ;
+insert into department values('923', '산업공학과', '207호') ;
+insert into department values('925', '전자공학과', '308호') ;
+
+insert into stud 
+values('1292001', '1825409', '김광식', 3, '서울', 920) ;
+insert into stud 
+values('1292002', '1730021', '김정현', 3, '서울', 920) ;
+insert into stud 
+values('1292003', '2308302', '김현정', 4, '대전', 920) ;
+insert into stud 
+values('1292301', '2704012', '김현정', 2, '대구', 923) ;
+insert into stud 
+values('1292303', '1524390', '박광수', 3, '광주', 923) ;
+insert into stud 
+values('1292305', '1809003', '김우주', 4, '부산', 923) ;
+insert into stud 
+values('1292501', '1506390', '박철수', 3, '대전', 925) ;
+insert into stud 
+values('1292502', '1809003', '백태성', 3, '서울', 925) ;
+--------------------------------------------
+* SQL 문장을 작성하시오.
+
+1. 학생 테이블을 모두 출력하시오.
+
+2. 920 학과에 소속된 학생을 모두 출력하시오.
+
+3. 학번이 1292502인 학생의 주민번호와 이름을 출력하시오.
+
+4. 박광수 학생이 소속된 학과의 학과이름을 출력하시오.
+
+-------------
+끝

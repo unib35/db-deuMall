@@ -1,0 +1,3 @@
+﻿  main.cpp
+C:\Users\Lee\Desktop\deuMall\main.cpp(24,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  deuMall.vcxproj -> C:\Users\Lee\Desktop\deuMall\Debug\deuMall.exe
