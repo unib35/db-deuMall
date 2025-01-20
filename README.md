@@ -1,6 +1,14 @@
 # 동의 컴소 쇼핑몰 프로젝트
 
+## 프로젝트 메인 화면
+
+ - 프로젝트 실행 시 표시되는 메인 화면
+
+
+<img width="1135" alt="Image" src="https://github.com/user-attachments/assets/b188a6fa-f01e-47ff-9366-0af2eb3fb737" />
+
 ### 프로젝트 개요
+
 
 동의 컴소 쇼핑몰은 사용자가 다양한 상품을 조회, 관리, 주문할 수 있는 C++ 기반 콘솔 애플리케이션입니다. 이 프로젝트는 Pro*C (Oracle Pro*C Precompiler)를 활용하여 Oracle 데이터베이스와 연동되는 구조로 설계되었으며, 텍스트 기반의 UI를 통해 직관적인 사용자 경험을 제공합니다.
 
@@ -27,6 +35,30 @@
   - 총매출 정보 조회
 - **주문 관리**
   - 주문 상태 확인 및 업데이트
+
+---
+
+## Use Case 다이어그램
+
+프로젝트의 주요 사용 시나리오를 나타낸 다이어그램
+
+<img width="2512" alt="Image" src="https://github.com/user-attachments/assets/bdaf3d9b-98bc-46a7-98f8-1b591bbd1be2" />
+
+---
+
+## ERD (개념적 모델링)
+
+데이터베이스의 개념적 설계를 나타낸 ERD
+
+<img width="2094" alt="Image" src="https://github.com/user-attachments/assets/e7b5a01d-91ea-4d5a-8036-c9e34e2f3ef0" />
+
+---
+
+## ERD (논리적 모델링)
+
+데이터베이스의 논리적 설계를 나타낸 ERD
+
+<img width="1416" alt="Image" src="https://github.com/user-attachments/assets/399cc5df-67df-48f0-9ca5-5e7215db08db" />
 
 ---
 
@@ -93,38 +125,6 @@
 
 ---
 
-## 프로젝트 메인 화면
-
-프로젝트 실행 시 표시되는 메인 화면:
-
-![프로젝트 메인 화면](images/shopping_mall_screen.png)
-
----
-
-## Use Case 다이어그램
-
-프로젝트의 주요 사용 시나리오를 나타낸 다이어그램:
-
-![Use Case 다이어그램](images/use_case_diagram.png)
-
----
-
-## ERD (개념적 모델링)
-
-데이터베이스의 개념적 설계를 나타낸 ERD:
-
-![ERD 개념적 모델링](images/erd_conceptual.png)
-
----
-
-## ERD (논리적 모델링)
-
-데이터베이스의 논리적 설계를 나타낸 ERD:
-
-![ERD 논리적 모델링](images/erd_logical.png)
-
----
-
 ## 기여 방법
 1. 이슈를 생성하여 논의 시작
 2. 포크 후 새로운 브랜치에서 작업
@@ -138,4 +138,4 @@
 ---
 
 ## 문의
-궁금한 점이 있으면 문의해주세요: jm.jongminlee@gmail.com
+궁금한 점이 있으면 문의해주세요: jm.jongminlee@gmail.com
