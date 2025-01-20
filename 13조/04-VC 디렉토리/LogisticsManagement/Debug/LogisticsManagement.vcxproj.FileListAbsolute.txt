@@ -1,2 +1,0 @@
-C:\Users\tdkgu\Desktop\log2\LogisticsManagement\Debug\LogisticsManagement.exe
-C:\Users\tdkgu\Desktop\[13조] 데이터베이스 응용 최종 결과 자료\4. VC 디렉토리\LogisticsManagement\Debug\LogisticsManagement.exe
